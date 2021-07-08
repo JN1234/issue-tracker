@@ -13,7 +13,7 @@ function login() {
   }
   console.log(info)
 
-  fetch("https://zesco-issue-tracker.herokuapp.com/users/login", {
+  fetch("https://springboot-issue-tracker.herokuapp.com/users/login", {
     method: "post",
     headers: {
       'Accept': 'application/json',
@@ -85,7 +85,7 @@ function registerUser() {
   }
   console.log(info2)
 
-  fetch("https://zesco-issue-tracker.herokuapp.com/users/create", {
+  fetch("https://springboot-issue-tracker.herokuapp.com/users/create", {
     method: "post",
     headers: {
       'Accept': 'application/json',
@@ -137,7 +137,7 @@ function addEquip() {
   var name = document.getElementById('equipmentName').value;
 
 
-  fetch("https://zesco-issue-tracker.herokuapp.com/equips/read")
+  fetch("https://springboot-issue-tracker.herokuapp.com/equips/read")
     .then(response => response.json())
     .then(equips => {
 
@@ -154,7 +154,7 @@ function addEquip() {
 
       console.log(info)
 
-      fetch("https://zesco-issue-tracker.herokuapp.com/equips/create", {
+      fetch("https://springboot-issue-tracker.herokuapp.com/equips/create", {
         method: "post",
         headers: {
           'Accept': 'application/json',
@@ -196,7 +196,7 @@ function addIssue() {
   var month = new Date().getMonth().toString();
   var day = new Date().getDate().toString();
 
-  fetch("https://zesco-issue-tracker.herokuapp.com/issues/read")
+  fetch("https://springboot-issue-tracker.herokuapp.com/issues/read")
     .then(response => response.json())
     .then(issues => {
       var issuesId = 0;
@@ -209,7 +209,7 @@ function addIssue() {
       }
 
       console.log(info)
-      fetch("https://zesco-issue-tracker.herokuapp.com/issues/create", {
+      fetch("https://springboot-issue-tracker.herokuapp.com/issues/create", {
         method: "post",
         headers: {
           'Accept': 'application/json',
@@ -254,7 +254,7 @@ function getEquips() {
     login.className="nav-item side-nav-option";
 
   }
-  fetch("https://zesco-issue-tracker.herokuapp.com/equips/read")
+  fetch("https://springboot-issue-tracker.herokuapp.com/equips/read")
     .then(response => response.json())
     .then(data => {
 
@@ -280,11 +280,11 @@ function getIssues() {
 
   var equipment = [];
 
-  fetch("https://zesco-issue-tracker.herokuapp.com/equips/read")
+  fetch("https://springboot-issue-tracker.herokuapp.com/equips/read")
     .then(response => response.json())
     .then(data => {
       equipment = data;
-      fetch("https://zesco-issue-tracker.herokuapp.com/issues/read")
+      fetch("https://springboot-issue-tracker.herokuapp.com/issues/read")
         .then(response => response.json())
         .then(issues => {
 
@@ -344,7 +344,7 @@ function deleteIssue(e) {
 
   console.log(info)
 
-  fetch("https://zesco-issue-tracker.herokuapp.com/issues/delete", {
+  fetch("https://springboot-issue-tracker.herokuapp.com/issues/delete", {
     method: "delete",
     headers: {
       'Accept': 'application/json',
@@ -370,7 +370,7 @@ function deleteEquip(e) {
 
   console.log(info)
 
-  fetch("https://zesco-issue-tracker.herokuapp.com/equips/delete", {
+  fetch("https://springboot-issue-tracker.herokuapp.com/equips/delete", {
     method: "delete",
     headers: {
       'Accept': 'application/json',
@@ -405,7 +405,7 @@ function updateIssue() {
     window.alert("Only Supervisor can provide feedback.Please log in as superviser")
   }
   else {
-    fetch("https://zesco-issue-tracker.herokuapp.com/issues/update", {
+    fetch("https://springboot-issue-tracker.herokuapp.com/issues/update", {
       method: "put",
       headers: {
         'Accept': 'application/json',
