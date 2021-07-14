@@ -66,19 +66,18 @@
 					</p>
 				</div>
 				<div id="equipment" class="disappear">
-					<form onsubmit="addEquip()" action="#" onreset="cancelIssuePost()">
-						<div class="mb-3">
-							<label for="equipmentName" class="form-label">Name</label>
-							<input type="text" class="form-control" id="equipmentName" placeholder="Enter equipment name" required>
-						</div>
-						<div class="mb-3">
-							<label for="equipmentDesc" class="form-label">Description</label>
-							<textarea class="form-control" id="equipmentDesc" rows="3"
-								placeholder="Enter equipment description here..." required></textarea>
-						</div>
-						<button type="submit" class="btn btn-success mb-3" onsubmit="e=>{e.preventDefault()}">Save</button>
-						<button type="reset" class="btn btn-danger mb-3">Cancel</button>
-					</form>
+					<div class="mb-3">
+						<label for="equipmentName" class="form-label">Name</label>
+						<input type="text" class="form-control" id="equipmentName" placeholder="Enter equipment name" required>
+					</div>
+					<div class="mb-3">
+						<label for="equipmentDesc" class="form-label">Description</label>
+						<textarea class="form-control" id="equipmentDesc" rows="3" placeholder="Enter equipment description here..."
+							required></textarea>
+					</div>
+					<button type="button" class="btn btn-success mb-3" onClick="addEquip()">Save</button>
+					<button type="button" onClick="cancelEquipPost()" class="btn btn-danger mb-3">Cancel</button>
+
 					
 
 					<h2>Available Equipments</h2>
@@ -96,25 +95,24 @@
 					</table>
 				</div>
 				<div id="issue" class="disappear">
-					<form onsubmit="addIssue()" action="#" onreset="cancelIssuePost()"  >
-						<label class="form-label"
-							style="display: block;margin-top: 50px;line-height: 1px; margin-bottom: 0;padding-bottom: 0;">Equipment</label>
-						<select class="form-select form-select-lg mb-3" id="equipmentSelect" style="padding: 7px; margin-top: 20px;width: 50%;"
-							aria-label=".form-select-lg example">
-						
-						</select>
-						<div class="mb-3">
-							<label for="issueDesc" class="form-label">Description</label>
-							<textarea class="form-control" id="issueDesc" rows="3" placeholder="Enter issue description here..." required></textarea>
-						</div>
-						<div class="mb-3">
-							<label for="issueLocation" class="form-label">Location</label>
-							<input type="text" class="form-control" id="issueLocation" placeholder="Enter Location..." required>
-						</div>
-						
-						<button type="submit" class="btn btn-success mb-3" onClick="(event)=>{event.preventDefault()}">Save</button>
-						<button type="reset"  class="btn btn-danger mb-3" onClick="(event)=>{event.preventDefault()}">Cancel</button>
-						
+					<label class="form-label"
+						style="display: block;margin-top: 50px;line-height: 1px; margin-bottom: 0;padding-bottom: 0;">Equipment</label>
+					<select class="form-select form-select-lg mb-3" id="equipmentSelect" style="padding: 7px; margin-top: 20px;width: 50%;"
+						aria-label=".form-select-lg example">
+					
+					</select>
+					<div class="mb-3">
+						<label for="issueDesc" class="form-label">Description</label>
+						<textarea class="form-control" id="issueDesc" rows="3" placeholder="Enter issue description here..."
+							required></textarea>
+					</div>
+					<div class="mb-3">
+						<label for="issueLocation" class="form-label">Location</label>
+						<input type="text" class="form-control" id="issueLocation" placeholder="Enter Location..." required>
+					</div>
+					
+					<button type="button" class="btn btn-success mb-3" onClick="addIssue()">Save</button>
+					<button type="button" class="btn btn-danger mb-3" onClick="cancelIssuePost()">Cancel</button>
 					</form>
 					<h2>Available Issues</h2>
 					
